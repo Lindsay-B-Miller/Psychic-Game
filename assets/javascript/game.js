@@ -1,7 +1,8 @@
 //variables
 var wins = 0;
 var losses = 0;
-var ties = 0;
+var guessesLeft = 10;
+var alreadyTried;
 
 //computer needs to guess a letter
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
@@ -14,16 +15,26 @@ document.onkeyup = function () {
     var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
     console.log(userGuess)
 
-    //comapre user and computer guess
-    if (computerLetter === userGuess) {
-        console.log("you win!");
-    }
-    else {
-        console.log("you lose!")
+    //loop
+    for (var i = 0; i < 9; i++) {
+
+        //comapre user and computer guess
+        if (computerLetter === userGuess) {
+            wins++;
+            // Program.restart()
+        }
+        else {
+            guessesLeft--;
+        }
     }
 
+
+
     var html = "<p>Guess what letter I'm thinking of</p>" +
-        "<p>Wins: " + wins + "</p" +
+        "<p>Wins: " + wins + "</p>" +
         "<p>Losses: " + losses + "</p>" +
-        "<p>Ties: " + ties + "</p>";
+        "<p>Guesses Left " + guessesLeft + "</p>";
+
+    document.querySelector('#game').innerHTML = html;
+
 }
