@@ -7,7 +7,7 @@ var alreadyTried;
 //computer needs to guess a letter
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
-var computerLetter = Math.floor(Math.random * [letters.length]);
+var computerLetter = letters[Math.floor(Math.random() * letters.length)];
 console.log(computerLetter)
 
 //user chooses a letter
@@ -21,7 +21,7 @@ document.onkeyup = function () {
         //comapre user and computer guess
         if (computerLetter === userGuess) {
             wins++;
-            // Program.restart()
+
         }
         else {
             guessesLeft--;
