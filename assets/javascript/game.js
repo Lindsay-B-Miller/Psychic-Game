@@ -19,11 +19,13 @@ var reset = function () {
 
 
 
-// //function for guesses=0
-// function noMoreGuess() {
-//     losses++;
-//     guessesLeft = 0;
-// }
+//function for guesses=0
+var noMoreGuess = function () {
+    losses++;
+    guessesLeft = 9;
+    alreadyTried = [];
+    computeerLetter = letters[Math.floor(Math.random() * letters.length)];
+}
 
 // //function for win
 // function winner() {
@@ -51,6 +53,11 @@ document.onkeyup = function () {
         wins++;
         reset();
     }
+
+    else if (alreadyTried.includes(userGuess)) {
+        alert("You have already selected this letter. Please try a different letter")
+    }
+
     else if (guessesLeft > 0) {
         guessesLeft--;
         alreadyTried.push(userGuess);
