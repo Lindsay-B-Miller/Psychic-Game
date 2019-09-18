@@ -6,3 +6,7 @@ h1 {
 #game {
     font-size: 24px;
 }
+
+body {
+    margin: 10px;
+}

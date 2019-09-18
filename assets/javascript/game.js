@@ -72,11 +72,8 @@ document.onkeyup = function () {
 
 
 
-    var html = "<p>Guess what letter I'm thinking of</p>" +
-        "<p>Wins: " + wins + "</p>" +
-        "<p>Losses: " + losses + "</p>";
-
-    document.querySelector('#game').innerHTML = html;
+    document.querySelector('#losses').innerHTML = "Losses: " + losses;
+    document.querySelector('#wins').innerHTML = "Wins: " + wins;
     document.querySelector("#remaining-guesses").innerHTML = "Guesses Left: " + guessesLeft;
     document.querySelector("#already-tried").innerHTML = "Your guesses so far: " + alreadyTried;
 
