@@ -39,7 +39,7 @@ document.onkeyup = function () {
     console.log(userGuess)
 
 
-    if (letters.isIndexOf(userGuess) > -1 {
+    if (letters.indexOf(userGuess) > -1) {
 
         //function for the number of guesses remaining and letters guessed already
         function numberGuessesRemain() {
